@@ -1,0 +1,44 @@
+PODS:
+  - HanekeSwift (0.10.1)
+  - Nimble (3.0.0)
+  - OMGHTTPURLRQ (3.1.1):
+    - OMGHTTPURLRQ/RQ (= 3.1.1)
+  - OMGHTTPURLRQ/FormURLEncode (3.1.1)
+  - OMGHTTPURLRQ/RQ (3.1.1):
+    - OMGHTTPURLRQ/FormURLEncode
+    - OMGHTTPURLRQ/UserAgent
+  - OMGHTTPURLRQ/UserAgent (3.1.1)
+  - PromiseKit (3.0.2):
+    - PromiseKit/Foundation (= 3.0.2)
+    - PromiseKit/QuartzCore (= 3.0.2)
+    - PromiseKit/UIKit (= 3.0.2)
+  - PromiseKit/CorePromise (3.0.2)
+  - PromiseKit/Foundation (3.0.2):
+    - OMGHTTPURLRQ (~> 3.1.0)
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (3.0.2):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (3.0.2):
+    - PromiseKit/CorePromise
+  - Quick (0.8.0)
+  - SwiftFlow (0.2.2)
+  - SwiftyJSON (2.3.2)
+
+DEPENDENCIES:
+  - HanekeSwift
+  - Nimble (= 3.0.0)
+  - PromiseKit (~> 3.0.1)
+  - Quick (~> 0.8.0)
+  - SwiftFlow
+  - SwiftyJSON (~> 2.3)
+
+SPEC CHECKSUMS:
+  HanekeSwift: 08e47d3d0f2899ec58e5d257beba0de619aca9e8
+  Nimble: 4c353d43735b38b545cbb4cb91504588eb5de926
+  OMGHTTPURLRQ: 633f98ee745aeda02345935a52eec1784cddb589
+  PromiseKit: ab1a380f7a30cf8cce663a2411e8b3580b10313d
+  Quick: 563d0f6ec5f72e394645adb377708639b7dd38ab
+  SwiftFlow: 1bc15300bfa69a75fc2f9f08f910247c1f12dc88
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+
+COCOAPODS: 0.39.0
