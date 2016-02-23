@@ -19,11 +19,15 @@ class ViewController: UIViewController, StoreSubscriber {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+	}
+	
+	override func viewWillAppear(animated: Bool) {
+		super.viewWillAppear(animated)
 		Registry.instance.store.subscribe(self)
 	}
 	
-	override func viewDidDisappear(animated: Bool) {
-		super.viewDidDisappear(animated)
+	override func viewWillDisappear(animated: Bool) {
+		super.viewWillDisappear(animated)
 		Registry.instance.store.unsubscribe(self)
 	}
 	

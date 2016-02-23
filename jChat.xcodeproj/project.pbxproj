@@ -14,6 +14,8 @@
 		B14E80231C7522A1001033DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B14E80221C7522A1001033DA /* Assets.xcassets */; };
 		B14E80261C7522A1001033DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B14E80241C7522A1001033DA /* LaunchScreen.storyboard */; };
 		B14E80311C7522A1001033DA /* jChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14E80301C7522A1001033DA /* jChatTests.swift */; };
+		B1AEF6011C7C0CDA00406719 /* ActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AEF6001C7C0CDA00406719 /* ActionTableViewCell.swift */; };
+		B1CD3CA51C7A760900DC6308 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CD3CA41C7A760900DC6308 /* ActionViewController.swift */; };
 		B1F758091C76CD6C0051C7C6 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F758081C76CD6C0051C7C6 /* AppState.swift */; };
 		B1F7580B1C76CDBB0051C7C6 /* Registry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7580A1C76CDBB0051C7C6 /* Registry.swift */; };
 		B1F7580D1C76CECD0051C7C6 /* ChatActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7580C1C76CECD0051C7C6 /* ChatActions.swift */; };
@@ -47,6 +49,8 @@
 		B14E802C1C7522A1001033DA /* jChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B14E80301C7522A1001033DA /* jChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jChatTests.swift; sourceTree = "<group>"; };
 		B14E80321C7522A1001033DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1AEF6001C7C0CDA00406719 /* ActionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionTableViewCell.swift; sourceTree = "<group>"; };
+		B1CD3CA41C7A760900DC6308 /* ActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		B1F758081C76CD6C0051C7C6 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		B1F7580A1C76CDBB0051C7C6 /* Registry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Registry.swift; sourceTree = "<group>"; };
 		B1F7580C1C76CECD0051C7C6 /* ChatActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatActions.swift; sourceTree = "<group>"; };
@@ -133,6 +137,8 @@
 				B1F7580E1C76CF260051C7C6 /* ActionState.swift */,
 				B1F758101C76CF9B0051C7C6 /* ChatService.swift */,
 				B1F758121C76D1D00051C7C6 /* ChatReducer.swift */,
+				B1CD3CA41C7A760900DC6308 /* ActionViewController.swift */,
+				B1AEF6001C7C0CDA00406719 /* ActionTableViewCell.swift */,
 			);
 			path = jChat;
 			sourceTree = "<group>";
@@ -349,8 +355,10 @@
 				B1F758091C76CD6C0051C7C6 /* AppState.swift in Sources */,
 				B14E801E1C7522A1001033DA /* ViewController.swift in Sources */,
 				B1F758111C76CF9B0051C7C6 /* ChatService.swift in Sources */,
+				B1AEF6011C7C0CDA00406719 /* ActionTableViewCell.swift in Sources */,
 				B1F7580B1C76CDBB0051C7C6 /* Registry.swift in Sources */,
 				B1F7580D1C76CECD0051C7C6 /* ChatActions.swift in Sources */,
+				B1CD3CA51C7A760900DC6308 /* ActionViewController.swift in Sources */,
 				B14E801C1C7522A1001033DA /* AppDelegate.swift in Sources */,
 				B1F758131C76D1D00051C7C6 /* ChatReducer.swift in Sources */,
 				B1F7580F1C76CF260051C7C6 /* ActionState.swift in Sources */,

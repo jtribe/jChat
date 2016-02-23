@@ -16,6 +16,8 @@ import Foundation
  argument.
  */
 public class MainStore<State: StateType>: Store {
+	
+	public var history: [Action] = [ ]
 
     public var state: State {
         didSet {
@@ -91,9 +93,11 @@ public class MainStore<State: StateType>: Store {
     }
 
     public func dispatch(action: Action, callback: DispatchCallback?) -> Any {
+		
         let returnValue = self.dispatchFunction(action)
         callback?(self.state)
 
+		history.append(action)
         return returnValue
     }
 

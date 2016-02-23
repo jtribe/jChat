@@ -37,8 +37,16 @@ struct ChatActions {
 	}
 }
 
-struct PostMessageToChatroomAction: Action {
+protocol StatefulAction : Action {
+	typealias T
+	var actionState: ActionState<T> { get }
+	var name: String { get }
+}
+
+struct PostMessageToChatroomAction: Action, StatefulAction {
 	let actionState: ActionState<String>
+	let name = "PostMessageToChatroomAction"
+	
 	init(actionState: ActionState<String>) {
 		self.actionState = actionState
 	}
