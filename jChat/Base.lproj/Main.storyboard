@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="473"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="pho-yf-iLZ" style="IBUITableViewCellStyleDefault" id="dqi-de-ytb" customClass="ChatTableViewCell" customModule="jChat" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="pho-yf-iLZ" style="IBUITableViewCellStyleDefault" id="dqi-de-ytb" customClass="ChatMessageTableViewCell" customModule="jChat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dqi-de-ytb" id="9QS-1k-3Hs">

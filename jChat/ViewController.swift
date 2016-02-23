@@ -24,7 +24,11 @@ class ViewController: UIViewController, StoreSubscriber {
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
 		Registry.instance.store.subscribe(self)
+		
+		navigationItem.title = "HelloChat"
+		
 		chatTable.rowHeight = UITableViewAutomaticDimension
+		chatTable.registerNib(UINib(nibName: "ChatMessageTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
 	}
 	
 	override func viewWillDisappear(animated: Bool) {
@@ -64,15 +68,12 @@ class ViewController: UIViewController, StoreSubscriber {
 extension ViewController : UITableViewDataSource, UITableViewDelegate {
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as? ChatTableViewCell
+		let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as? ChatMessageTableViewCell
 		let messageObject = messages[indexPath.row]
 		
-		cell?.textLabel?.numberOfLines = 0
-		cell?.textLabel?.text = messageObject.messageText
-		cell?.textLabel?.sizeToFit()
-		cell?.textLabel?.setInsets(topInset: 5, left: 5, bottom: 5, right: 5, forRect: cell!.textLabel!.frame)
-		cell?.textLabel?.textAlignment = messageObject.isIncoming ? .Left : .Right
-		cell?.textLabel?.backgroundColor = messageObject.isIncoming ? .lightGrayColor() : .redColor()
+		cell?.chatLabel?.numberOfLines = 0
+		cell?.chatLabel?.text = messageObject.messageText
+		cell?.setIncoming(messageObject.isIncoming)
 		
 		return cell!
 	}
@@ -82,7 +83,7 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate {
 	}
 	
 	func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-		return 44
+		return 30
 	}
 	
 	func numberOfSectionsInTableView(tableView: UITableView) -> Int {

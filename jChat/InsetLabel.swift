@@ -9,34 +9,61 @@
 import Foundation
 import UIKit
 
-var topInset: CGFloat = 0
-var leftInset: CGFloat = 0
-var rightInset: CGFloat = 0
-var bottomInset: CGFloat = 0
+@IBDesignable class InsetLabel : UILabel {
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        leftInset = 5
+        rightInset = 5
+        topInset = 5
+        bottomInset = 5
+    }
+    
+    @IBInspectable var topInset: CGFloat = 0 {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    
+    @IBInspectable var leftInset: CGFloat = 0 {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    
+    @IBInspectable var bottomInset: CGFloat = 0 {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    
+    @IBInspectable var rightInset: CGFloat = 0 {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    
+    override func drawTextInRect(rect: CGRect) {
+        super.drawTextInRect(UIEdgeInsetsInsetRect(rect, UIEdgeInsetsMake(topInset, leftInset, bottomInset, rightInset)))
+    }
+    
+    override func intrinsicContentSize() -> CGSize {
+        var parentSize: CGSize = super.intrinsicContentSize()
+        parentSize.width += leftInset+rightInset
+        parentSize.height += topInset+bottomInset
+        return parentSize
+    }
+    
+    override func sizeThatFits(size: CGSize) -> CGSize {
+        var parentSize: CGSize = super.sizeThatFits(size)
+        parentSize.width += leftInset+rightInset
+        parentSize.height += topInset+bottomInset
+        return parentSize
+    }
 
-extension UILabel {
-	
-	func setInsets(topInset top: CGFloat, left: CGFloat, bottom: CGFloat, right: CGFloat, forRect rect: CGRect) {
-		topInset = top
-		leftInset = left
-		rightInset = right
-		bottomInset = bottom
-		
-		drawTextInRect(UIEdgeInsetsInsetRect(rect, UIEdgeInsetsMake(top, left, bottom, right)))
-	}
-	
-	override public func intrinsicContentSize() -> CGSize {
-		var parentSize: CGSize = super.intrinsicContentSize()
-		parentSize.width += leftInset+rightInset
-		parentSize.height += topInset+bottomInset
-		return parentSize
-	}
-	
-	override public func sizeThatFits(size: CGSize) -> CGSize {
-		var parentSize: CGSize = super.sizeThatFits(size)
-		parentSize.width += leftInset+rightInset
-		parentSize.height += topInset+bottomInset
-		return parentSize
-	}
-	
 }

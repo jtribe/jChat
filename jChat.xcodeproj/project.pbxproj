@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		06EAE6AE1C7C50E400B477E7 /* InsetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EAE6AD1C7C50E400B477E7 /* InsetLabel.swift */; };
-		06EAE6B21C7C564600B477E7 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EAE6B11C7C564600B477E7 /* ChatTableViewCell.swift */; };
+		06EAE6B51C7D1B1F00B477E7 /* ChatMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EAE6B31C7D1B1F00B477E7 /* ChatMessageTableViewCell.swift */; };
+		06EAE6B61C7D1B1F00B477E7 /* ChatMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06EAE6B41C7D1B1F00B477E7 /* ChatMessageTableViewCell.xib */; };
+		06EAE6B81C7D1BFF00B477E7 /* InsetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EAE6B71C7D1BFF00B477E7 /* InsetLabel.swift */; };
 		2742F8584BBA1E1EDB49039D /* Pods_jChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36FA9BBB02110F82D1AB2371 /* Pods_jChat.framework */; };
 		B14E801C1C7522A1001033DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14E801B1C7522A1001033DA /* AppDelegate.swift */; };
 		B14E801E1C7522A1001033DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14E801D1C7522A1001033DA /* ViewController.swift */; };
@@ -38,8 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		06EAE6AD1C7C50E400B477E7 /* InsetLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsetLabel.swift; sourceTree = "<group>"; };
-		06EAE6B11C7C564600B477E7 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		06EAE6B31C7D1B1F00B477E7 /* ChatMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageTableViewCell.swift; sourceTree = "<group>"; };
+		06EAE6B41C7D1B1F00B477E7 /* ChatMessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatMessageTableViewCell.xib; sourceTree = "<group>"; };
+		06EAE6B71C7D1BFF00B477E7 /* InsetLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsetLabel.swift; sourceTree = "<group>"; };
 		36FA9BBB02110F82D1AB2371 /* Pods_jChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51A9AFA77D04B54F80554888 /* Pods-jChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jChatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-jChatTests/Pods-jChatTests.release.xcconfig"; sourceTree = "<group>"; };
 		6860F807EEF2A7B700DC0883 /* Pods-jChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jChat/Pods-jChat.debug.xcconfig"; sourceTree = "<group>"; };
@@ -129,7 +131,7 @@
 		B14E801A1C7522A1001033DA /* jChat */ = {
 			isa = PBXGroup;
 			children = (
-				06EAE6AD1C7C50E400B477E7 /* InsetLabel.swift */,
+				06EAE6B71C7D1BFF00B477E7 /* InsetLabel.swift */,
 				B14E801B1C7522A1001033DA /* AppDelegate.swift */,
 				B14E801D1C7522A1001033DA /* ViewController.swift */,
 				B14E801F1C7522A1001033DA /* Main.storyboard */,
@@ -144,7 +146,8 @@
 				B1F758121C76D1D00051C7C6 /* ChatReducer.swift */,
 				B1CD3CA41C7A760900DC6308 /* ActionViewController.swift */,
 				B1AEF6001C7C0CDA00406719 /* ActionTableViewCell.swift */,
-				06EAE6B11C7C564600B477E7 /* ChatTableViewCell.swift */,
+				06EAE6B31C7D1B1F00B477E7 /* ChatMessageTableViewCell.swift */,
+				06EAE6B41C7D1B1F00B477E7 /* ChatMessageTableViewCell.xib */,
 			);
 			path = jChat;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B14E80261C7522A1001033DA /* LaunchScreen.storyboard in Resources */,
+				06EAE6B61C7D1B1F00B477E7 /* ChatMessageTableViewCell.xib in Resources */,
 				B14E80231C7522A1001033DA /* Assets.xcassets in Resources */,
 				B14E80211C7522A1001033DA /* Main.storyboard in Resources */,
 			);
@@ -362,11 +366,11 @@
 				B14E801E1C7522A1001033DA /* ViewController.swift in Sources */,
 				B1F758111C76CF9B0051C7C6 /* ChatService.swift in Sources */,
 				B1AEF6011C7C0CDA00406719 /* ActionTableViewCell.swift in Sources */,
-				06EAE6B21C7C564600B477E7 /* ChatTableViewCell.swift in Sources */,
-				06EAE6AE1C7C50E400B477E7 /* InsetLabel.swift in Sources */,
 				B1F7580B1C76CDBB0051C7C6 /* Registry.swift in Sources */,
 				B1F7580D1C76CECD0051C7C6 /* ChatActions.swift in Sources */,
 				B1CD3CA51C7A760900DC6308 /* ActionViewController.swift in Sources */,
+				06EAE6B51C7D1B1F00B477E7 /* ChatMessageTableViewCell.swift in Sources */,
+				06EAE6B81C7D1BFF00B477E7 /* InsetLabel.swift in Sources */,
 				B14E801C1C7522A1001033DA /* AppDelegate.swift in Sources */,
 				B1F758131C76D1D00051C7C6 /* ChatReducer.swift in Sources */,
 				B1F7580F1C76CF260051C7C6 /* ActionState.swift in Sources */,
