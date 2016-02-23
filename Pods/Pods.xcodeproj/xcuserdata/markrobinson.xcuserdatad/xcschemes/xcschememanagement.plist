@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Colours.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>HanekeSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,17 +57,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>04A6BC2CC1081DF5077B54315256F822</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>190ACD3A51BC90B85EADB13E9CDD207B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>58DA200888C80D032661B6CE83CB57E2</key>
+		<key>284B9DD1CE78786FA0B272B40156469F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,17 +72,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>667BCD09F50DB298E78834BE727AAF05</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6FF1553FABD84F02D26C87176CD96178</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>7DDF79495F24B309AF089ACC99FC1151</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>861AFBE3AA65A4F7B922A9EEE1C02600</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A629B6649701A9A1709934D25EB5CCC9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -93,6 +93,16 @@
 			<true/>
 		</dict>
 		<key>C5DB5104FED3C10F78978AFC810982B9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D0C35D920025E58A92036E09BF976166</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E4A0090474BAD26C1A498B1E0BC73AF4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

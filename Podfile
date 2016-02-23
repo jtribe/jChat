@@ -7,6 +7,7 @@ target 'jChat' do
   pod "PromiseKit", "~> 3.0.1"
   pod 'SwiftFlow'
   pod 'HanekeSwift'
+  pod 'Colours/Swift'
 end
 
 target 'jChatTests' do

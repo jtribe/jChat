@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftFlow
+import Colours
 
 class ActionTableViewCell: UITableViewCell {
 
@@ -19,13 +20,13 @@ class ActionTableViewCell: UITableViewCell {
 		actionTitle.text = action.name
 		switch action.actionState {
 		case .InProgress:
-			stateView.backgroundColor = UIColor.yellowColor()
+			stateView.backgroundColor = UIColor.mandarinColor()
 			payloadLabel.text = " "
 		case .Success(let result):
-			stateView.backgroundColor = UIColor.greenColor()
+			stateView.backgroundColor = UIColor.successColor()
 			payloadLabel.text = "\(result)"
 		case .Error(let error):
-			stateView.backgroundColor = UIColor.redColor()
+			stateView.backgroundColor = UIColor.dangerColor()
 			payloadLabel.text = "\(error)"
 		}
 	}

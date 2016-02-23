@@ -1,4 +1,5 @@
 PODS:
+  - Colours/Swift (5.13.0)
   - HanekeSwift (0.10.1)
   - Nimble (3.0.0)
   - OMGHTTPURLRQ (3.1.1):
@@ -25,6 +26,7 @@ PODS:
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
+  - Colours/Swift
   - HanekeSwift
   - Nimble (= 3.0.0)
   - PromiseKit (~> 3.0.1)
@@ -33,6 +35,7 @@ DEPENDENCIES:
   - SwiftyJSON (~> 2.3)
 
 SPEC CHECKSUMS:
+  Colours: f24220c38f13deac88612667e9b4a7fb96b871d4
   HanekeSwift: 08e47d3d0f2899ec58e5d257beba0de619aca9e8
   Nimble: 4c353d43735b38b545cbb4cb91504588eb5de926
   OMGHTTPURLRQ: 633f98ee745aeda02345935a52eec1784cddb589

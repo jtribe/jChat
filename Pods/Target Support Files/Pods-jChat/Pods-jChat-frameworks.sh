@@ -84,6 +84,7 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-jChat/Colours.framework"
   install_framework "Pods-jChat/Haneke.framework"
   install_framework "Pods-jChat/OMGHTTPURLRQ.framework"
   install_framework "Pods-jChat/PromiseKit.framework"
@@ -91,6 +92,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-jChat/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-jChat/Colours.framework"
   install_framework "Pods-jChat/Haneke.framework"
   install_framework "Pods-jChat/OMGHTTPURLRQ.framework"
   install_framework "Pods-jChat/PromiseKit.framework"
