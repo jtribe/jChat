@@ -10,12 +10,12 @@ import Foundation
 import PromiseKit
 
 protocol ChatInterface {
-	func postMessageToChatroom(message: String) -> Promise<NSData>
+	func postMessageToChatroom(chatMessage: ChatMessage) -> Promise<NSData>
 }
 
 struct ChatService : ChatInterface {
 	
-	func postMessageToChatroom(message: String) -> Promise<NSData> {
+	func postMessageToChatroom(chatMessage: ChatMessage) -> Promise<NSData> {
 		return Promise(NSData())
 	}
 	

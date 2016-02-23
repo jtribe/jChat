@@ -20,7 +20,7 @@ struct ChatReducer : Reducer {
 	}
 	
 	private func postMessageToChatroomReducer(var state: AppState,
-		actionState: ActionState<String>) -> AppState
+		actionState: ActionState<ChatMessage>) -> AppState
 	{
 		switch actionState {
 		case .InProgress: 

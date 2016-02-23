@@ -13,7 +13,7 @@ class ViewController: UIViewController, StoreSubscriber {
 	
 	@IBOutlet weak var chatTable: UITableView!
 	@IBOutlet weak var messageField: UITextField!
-	private var messages: [String] {
+	private var messages: [ChatMessage] {
 		return Registry.instance.store.state.messages
 	}
 	
@@ -34,6 +34,16 @@ class ViewController: UIViewController, StoreSubscriber {
 	func newState(state: AppState) {
 		chatTable.reloadData()
 	}
+	
+	@objc func adele() {
+		let message = "Who is this?"
+		
+		func clearMessageBox() { messageField.text = "" }
+		
+		let action = ChatActions.postMessageToChatroom(message, isIncoming: true)
+		Registry.instance.store.dispatch(action)
+		clearMessageBox()
+	}
 
 	@IBAction private func sendMessage() {
 		guard let message = messageField.text
@@ -43,8 +53,9 @@ class ViewController: UIViewController, StoreSubscriber {
 		
 		func clearMessageBox() { messageField.text = "" }
 		
-		let action = ChatActions.postMessageToChatroom(message)
+		let action = ChatActions.postMessageToChatroom(message, isIncoming: false)
 		Registry.instance.store.dispatch(action)
+		NSRunLoop.mainRunLoop().addTimer(timer, forMode: NSDefaultRunLoopMode)
 		clearMessageBox()
 	}
 }
@@ -53,7 +64,11 @@ extension ViewController : UITableViewDataSource {
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-		cell.textLabel?.text = messages[indexPath.row]
+		let messageObject = messages[indexPath.row]
+		
+		cell.textLabel?.text = messageObject.messageText
+		cell.textLabel?.textAlignment = messageObject.isIncoming ? .Left : .Right
+		
 		return cell
 	}
 	
