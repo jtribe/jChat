@@ -10,11 +10,15 @@ import UIKit
 import SwiftFlow
 
 class ViewController: UIViewController, StoreSubscriber {
-
+	
 	@IBOutlet weak var chatTable: UITableView!
 	@IBOutlet weak var messageField: UITextField!
-	var messages: [String] {
+	private var messages: [String] {
 		return Registry.instance.store.state.messages
+	}
+	
+	private var timer: NSTimer {
+		return NSTimer(timeInterval: 1.0, target: self, selector: "adele", userInfo: nil, repeats: false)
 	}
 	
 	override func viewWillAppear(animated: Bool) {
@@ -31,7 +35,7 @@ class ViewController: UIViewController, StoreSubscriber {
 		chatTable.reloadData()
 	}
 
-	@IBAction func sendMessage() {
+	@IBAction private func sendMessage() {
 		guard let message = messageField.text
 			where message.characters.count > 0 else {
 				return
