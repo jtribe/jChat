@@ -15,10 +15,6 @@ class ActionTableViewCell: UITableViewCell {
 	@IBOutlet weak var actionTitle: UILabel!
 	@IBOutlet weak var payloadLabel: UILabel!
 	
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-	
 	func setUpWithAction<T: Action where T : StatefulAction>(action: T) {
 		actionTitle.text = action.name
 		switch action.actionState {

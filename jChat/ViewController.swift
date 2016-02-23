@@ -17,10 +17,6 @@ class ViewController: UIViewController, StoreSubscriber {
 		return Registry.instance.store.state.messages
 	}
 	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-	}
-	
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
 		Registry.instance.store.subscribe(self)
@@ -37,19 +33,16 @@ class ViewController: UIViewController, StoreSubscriber {
 
 	@IBAction func sendMessage() {
 		guard let message = messageField.text
-			where messageField.text?.characters.count > 0 else {
+			where message.characters.count > 0 else {
 				return
 		}
+		
+		func clearMessageBox() { messageField.text = "" }
 		
 		let action = ChatActions.postMessageToChatroom(message)
 		Registry.instance.store.dispatch(action)
 		clearMessageBox()
 	}
-	
-	func clearMessageBox() {
-		messageField.text = ""
-	}
-
 }
 
 extension ViewController : UITableViewDataSource {

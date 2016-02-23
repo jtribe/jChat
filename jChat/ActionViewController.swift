@@ -35,15 +35,12 @@ class ActionViewController: UIViewController, StoreSubscriber {
 extension ActionViewController : UITableViewDataSource {
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		guard let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as? ActionTableViewCell
-		else {
-			return UITableViewCell()
+		guard let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as? ActionTableViewCell,
+			action = history[indexPath.row] as? PostMessageToChatroomAction else {
+				return UITableViewCell()
 		}
 		
-		if let action = history[indexPath.row] as? PostMessageToChatroomAction {
-			cell.setUpWithAction(action)
-		}
-		
+		cell.setUpWithAction(action)
 		return cell
 	}
 	
