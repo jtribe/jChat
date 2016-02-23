@@ -24,6 +24,7 @@ class ViewController: UIViewController, StoreSubscriber {
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
 		Registry.instance.store.subscribe(self)
+		chatTable.rowHeight = UITableViewAutomaticDimension
 	}
 	
 	override func viewWillDisappear(animated: Bool) {
@@ -60,20 +61,28 @@ class ViewController: UIViewController, StoreSubscriber {
 	}
 }
 
-extension ViewController : UITableViewDataSource {
+extension ViewController : UITableViewDataSource, UITableViewDelegate {
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+		let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as? ChatTableViewCell
 		let messageObject = messages[indexPath.row]
 		
-		cell.textLabel?.text = messageObject.messageText
-		cell.textLabel?.textAlignment = messageObject.isIncoming ? .Left : .Right
+		cell?.textLabel?.numberOfLines = 0
+		cell?.textLabel?.text = messageObject.messageText
+		cell?.textLabel?.sizeToFit()
+		cell?.textLabel?.setInsets(topInset: 5, left: 5, bottom: 5, right: 5, forRect: cell!.textLabel!.frame)
+		cell?.textLabel?.textAlignment = messageObject.isIncoming ? .Left : .Right
+		cell?.textLabel?.backgroundColor = messageObject.isIncoming ? .lightGrayColor() : .redColor()
 		
-		return cell
+		return cell!
 	}
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return messages.count
+	}
+	
+	func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+		return 44
 	}
 	
 	func numberOfSectionsInTableView(tableView: UITableView) -> Int {
