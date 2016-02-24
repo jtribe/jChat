@@ -17,7 +17,31 @@ import Foundation
  */
 public class MainStore<State: StateType>: Store {
 	
-	public var history: [Action] = [ ]
+	public typealias TimeSlice = (state: State, action: Action)
+	public var history: [TimeSlice] = [ ] {
+		didSet {
+			devToolsSubscribers.forEach { $0.newActionHistory(history.map({ $0.action })) }
+		}
+	}
+    var devToolsSubscribers: [DevToolsSubscriber] = [ ]
+	
+    public func devToolsSubscribe(subscriber: DevToolsSubscriber) {
+        guard devToolsSubscribers.indexOf({ $0 === subscriber }) == nil else {
+            print("Store subscriber is already added, ignoring.")
+            return
+        }
+
+        devToolsSubscribers.append(subscriber)
+		subscriber.newActionHistory(history.map({ $0.action }))
+    }
+
+    public func devToolsUnsubscribe(subscriber: DevToolsSubscriber) {
+        let index = devToolsSubscribers.indexOf { return $0 === subscriber }
+
+        if let index = index {
+            devToolsSubscribers.removeAtIndex(index)
+        }
+    }
 
     public var state: State {
         didSet {
@@ -79,6 +103,17 @@ public class MainStore<State: StateType>: Store {
 
         return action
     }
+	
+	public func deleteAction(atIndex index: Int) {
+		var newHistory = history
+		let removedSlice = newHistory.removeAtIndex(index)
+		state = removedSlice.state
+		history = [ ]
+		
+		newHistory.map({ $0.action }).forEach({ action in
+			dispatch(action, callback: nil)
+		})
+	}
 
     public func dispatch(action: Action) -> Any {
         return dispatch(action, callback: nil)
@@ -94,10 +129,10 @@ public class MainStore<State: StateType>: Store {
 
     public func dispatch(action: Action, callback: DispatchCallback?) -> Any {
 		
+		history.append(TimeSlice(state, action))
         let returnValue = self.dispatchFunction(action)
         callback?(self.state)
 
-		history.append(action)
         return returnValue
     }
 

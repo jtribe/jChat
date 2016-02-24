@@ -16,6 +16,12 @@ class ViewController: UIViewController, StoreSubscriber {
 	var messages: [String] {
 		return Registry.instance.store.state.messages
 	}
+	@IBOutlet weak var messageBottomConstraint: NSLayoutConstraint!
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		setUpKeyboardMoveOnTap()
+	}
 	
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
@@ -24,6 +30,7 @@ class ViewController: UIViewController, StoreSubscriber {
 	
 	override func viewWillDisappear(animated: Bool) {
 		super.viewWillDisappear(animated)
+		dismissKeyboard()
 		Registry.instance.store.unsubscribe(self)
 	}
 	
@@ -42,6 +49,42 @@ class ViewController: UIViewController, StoreSubscriber {
 		let action = ChatActions.postMessageToChatroom(message)
 		Registry.instance.store.dispatch(action)
 		clearMessageBox()
+	}
+	
+	// MARK: Keyboard Setup
+	func setUpKeyboardMoveOnTap() {
+		NSNotificationCenter.defaultCenter().addObserver(self,
+			selector: Selector("keyboardWillShow:"),
+			name: UIKeyboardWillShowNotification,
+			object: nil);
+		NSNotificationCenter.defaultCenter().addObserver(self,
+			selector: Selector("keyboardWillHide:"),
+			name: UIKeyboardWillHideNotification,
+			object: nil);
+		
+		view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "dismissKeyboard"))
+	}
+	
+	func toggleKeyboard(offset offset: CGFloat = 0) {
+		let marginBottom: CGFloat = 20
+		messageBottomConstraint.constant = offset + marginBottom
+		UIView.animateWithDuration(0.5, animations: { [weak self] in
+			self?.view.layoutIfNeeded()
+			})
+	}
+	
+	func keyboardWillShow(notification: NSNotification) {
+		if let keyboardHeight = notification.userInfo?[UIKeyboardFrameBeginUserInfoKey]?.CGRectValue.size.height {
+			toggleKeyboard(offset: keyboardHeight)
+		}
+	}
+	
+	func keyboardWillHide(notification: NSNotification) {
+		toggleKeyboard()
+	}
+	
+	func dismissKeyboard() {
+		view.endEditing(true)
 	}
 }
 
