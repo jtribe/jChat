@@ -48,6 +48,8 @@ public class MainStore<State: StateType>: Store {
             subscribers.forEach { $0._newState(state) }
         }
     }
+	
+	private let initialState: State
 
     public var dispatchFunction: DispatchFunction!
 
@@ -62,6 +64,7 @@ public class MainStore<State: StateType>: Store {
     public required init(reducer: AnyReducer, state: State, middleware: [Middleware]) {
         self.reducer = reducer
         self.state = state
+		initialState = state
 
         // Wrap the dispatch function with all middlewares
         self.dispatchFunction = middleware.reverse().reduce(self._defaultDispatch) {
@@ -106,8 +109,8 @@ public class MainStore<State: StateType>: Store {
 	
 	public func deleteAction(atIndex index: Int) {
 		var newHistory = history
-		let removedSlice = newHistory.removeAtIndex(index)
-		state = removedSlice.state
+		newHistory.removeAtIndex(index)
+		state = initialState
 		history = [ ]
 		
 		newHistory.map({ $0.action }).forEach({ action in

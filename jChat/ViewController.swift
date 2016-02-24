@@ -21,6 +21,7 @@ class ViewController: UIViewController, StoreSubscriber {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setUpKeyboardMoveOnTap()
+		messageField.delegate = self
 	}
 	
 	override func viewWillAppear(animated: Bool) {
@@ -38,7 +39,7 @@ class ViewController: UIViewController, StoreSubscriber {
 		chatTable.reloadData()
 	}
 
-	@IBAction func sendMessage() {
+	func sendMessage() {
 		guard let message = messageField.text
 			where message.characters.count > 0 else {
 				return
@@ -70,7 +71,7 @@ class ViewController: UIViewController, StoreSubscriber {
 		messageBottomConstraint.constant = offset + marginBottom
 		UIView.animateWithDuration(0.5, animations: { [weak self] in
 			self?.view.layoutIfNeeded()
-			})
+		})
 	}
 	
 	func keyboardWillShow(notification: NSNotification) {
@@ -104,4 +105,14 @@ extension ViewController : UITableViewDataSource {
 		return 1
 	}
 	
+}
+
+extension ViewController : UITextFieldDelegate {
+	func textFieldShouldReturn(textField: UITextField) -> Bool {
+		guard textField.returnKeyType == .Send else {
+			return false
+		}
+		sendMessage()
+		return true
+	}
 }

@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EPJ-UB-Tji">
-                                <rect key="frame" x="0.0" y="64" width="600" height="446"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="456"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="pho-yf-iLZ" style="IBUITableViewCellStyleDefault" id="dqi-de-ytb">
@@ -45,44 +45,25 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="ded-BO-d3y"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VLt-sr-KDw">
-                                <rect key="frame" x="20" y="530" width="452" height="50"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VLt-sr-KDw">
+                                <rect key="frame" x="20" y="540" width="560" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Z9i-b9-M1X"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes" returnKeyType="send"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3N-eZ-Jca">
-                                <rect key="frame" x="480" y="530" width="100" height="50"/>
-                                <color key="backgroundColor" red="0.92156862750000001" green="0.23137254900000001" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="BPW-OF-sjX"/>
-                                    <constraint firstAttribute="height" constant="50" id="hap-EE-FXT"/>
-                                </constraints>
-                                <state key="normal" title="Send">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="sendMessage" destination="BYZ-38-t0r" eventType="touchUpInside" id="sJC-JF-6XX"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="r3N-eZ-Jca" firstAttribute="bottom" secondItem="VLt-sr-KDw" secondAttribute="bottom" id="28X-8n-gWi"/>
-                            <constraint firstItem="r3N-eZ-Jca" firstAttribute="leading" secondItem="VLt-sr-KDw" secondAttribute="trailing" constant="8" id="Ag6-r9-SNG"/>
+                            <constraint firstItem="VLt-sr-KDw" firstAttribute="top" secondItem="EPJ-UB-Tji" secondAttribute="bottom" constant="20" id="3V4-a6-Zt4"/>
                             <constraint firstAttribute="trailing" secondItem="EPJ-UB-Tji" secondAttribute="trailing" id="Kuj-yg-w9h"/>
                             <constraint firstItem="EPJ-UB-Tji" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="StR-bd-WXt"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="VLt-sr-KDw" secondAttribute="bottom" constant="20" id="U2N-bF-LPG"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="r3N-eZ-Jca" secondAttribute="trailing" id="VQu-8e-JDE"/>
                             <constraint firstItem="EPJ-UB-Tji" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="WFo-KJ-5hb"/>
-                            <constraint firstItem="r3N-eZ-Jca" firstAttribute="centerY" secondItem="VLt-sr-KDw" secondAttribute="centerY" id="eQp-a3-vlc"/>
+                            <constraint firstItem="VLt-sr-KDw" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="elO-Iz-74p"/>
                             <constraint firstItem="VLt-sr-KDw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="mz4-fh-OEY"/>
-                            <constraint firstItem="r3N-eZ-Jca" firstAttribute="top" secondItem="EPJ-UB-Tji" secondAttribute="bottom" constant="20" id="vte-Xe-5MQ"/>
-                            <constraint firstItem="r3N-eZ-Jca" firstAttribute="top" secondItem="VLt-sr-KDw" secondAttribute="top" id="xDk-hQ-tgf"/>
+                            <constraint firstItem="VLt-sr-KDw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="zCT-bW-S3V"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="GzZ-pP-qUU">
@@ -94,7 +75,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="chatTable" destination="EPJ-UB-Tji" id="FGZ-dT-KqN"/>
-                        <outlet property="messageBottomConstraint" destination="U2N-bF-LPG" id="rsw-oY-ydQ"/>
+                        <outlet property="messageBottomConstraint" destination="U2N-bF-LPG" id="FBG-2d-lsp"/>
                         <outlet property="messageField" destination="VLt-sr-KDw" id="K1V-Ag-i7Y"/>
                     </connections>
                 </viewController>
