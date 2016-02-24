@@ -12,6 +12,10 @@ public protocol AnyStoreSubscriber: class {
     func _newState(state: StateType)
 }
 
+public protocol DevToolsSubscriber: class {
+    func newActionHistory(actions: [Action])
+}
+
 public protocol StoreSubscriber: AnyStoreSubscriber {
     typealias StoreSubscriberStateType
 
