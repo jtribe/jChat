@@ -42,7 +42,7 @@
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="g2X-nb-TTo" secondAttribute="bottom" constant="11" id="8OR-dR-1uG"/>
                     <constraint firstAttribute="trailing" secondItem="g2X-nb-TTo" secondAttribute="trailing" priority="250" constant="8" id="ZvV-Mr-qnS"/>
-                    <constraint firstItem="g2X-nb-TTo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="lra-kf-GPt"/>
+                    <constraint firstItem="g2X-nb-TTo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" priority="750" constant="8" id="lra-kf-GPt"/>
                     <constraint firstItem="g2X-nb-TTo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="lwy-ts-wPS"/>
                 </constraints>
             </tableViewCellContentView>

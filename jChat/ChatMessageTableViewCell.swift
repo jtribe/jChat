@@ -17,7 +17,7 @@ class ChatMessageTableViewCell: UITableViewCell {
 	
 	func setIncoming(incoming: Bool) {
 		if incoming {
-			leadingConstraint?.priority = UILayoutPriorityRequired
+			leadingConstraint?.priority = UILayoutPriorityDefaultHigh
 			trailingConstraint?.priority = UILayoutPriorityDefaultLow
 			widthConstraint?.constant = UIScreen.mainScreen().bounds.size.width-Buffer.ScreenEdge.rawValue
 			chatLabel?.textAlignment = .Left
@@ -27,7 +27,7 @@ class ChatMessageTableViewCell: UITableViewCell {
 			paint(isIncoming: true)
 		} else {
 			leadingConstraint?.priority = UILayoutPriorityDefaultLow
-			trailingConstraint?.priority = UILayoutPriorityRequired
+			trailingConstraint?.priority = UILayoutPriorityDefaultHigh
 			widthConstraint?.constant = UIScreen.mainScreen().bounds.size.width-Buffer.ScreenEdge.rawValue
 			chatLabel?.textAlignment = .Right
 			
@@ -40,7 +40,7 @@ class ChatMessageTableViewCell: UITableViewCell {
 	private func paint(isIncoming incoming: Bool) {
 		chatLabel?.backgroundColor = incoming ? UIColor(hex: "#eeeeee") : UIColor(hex: "#0061e6")
 		chatLabel?.textColor = incoming ? .blackColor() : .whiteColor()
-		chatLabel?.layer.cornerRadius = 7.0
+		chatLabel?.layer.cornerRadius = 12.0
 		chatLabel?.layer.masksToBounds = true
 	}
 	
