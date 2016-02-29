@@ -12,7 +12,7 @@ import SwiftFlow
 struct AppState : StateType {
 	
 	var isBusy = false
-	var messages: [String] = [ ]
+	var messages: [ChatMessage] = [ ]
 	var messageError: ErrorType? = nil
 	
 }

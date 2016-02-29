@@ -12,21 +12,23 @@ import SwiftyJSON
 
 struct ChatActions {
 	
-	static func postMessageToChatroom(message: String) -> AsyncActionCreator {
+	static func postMessageToChatroom(message: String, isIncoming: Bool) -> AsyncActionCreator {
 		return { _, store, dispatchCallback in
 			(store as! MainStore<AppState>).dispatch(PostMessageToChatroomAction(actionState: .InProgress))
 			
-			Registry.instance.chatService.postMessageToChatroom(message).then { _ in
-				dispatchCallback(postMessageSuccess(message))
+			let chatMessage = ChatMessage(messageText: message, isIncoming: isIncoming)
+			
+			Registry.instance.chatService.postMessageToChatroom(chatMessage).then { _ in
+				dispatchCallback(postMessageSuccess(chatMessage))
 			}.error { error in
 				dispatchCallback(postMessageError(error))
 			}
 		}
 	}
 	
-	private static func postMessageSuccess(message: String) -> ActionCreator {
+	private static func postMessageSuccess(chatMessage: ChatMessage) -> ActionCreator {
 		return { _, _ in
-			PostMessageToChatroomAction(actionState: .Success(message))
+			PostMessageToChatroomAction(actionState: .Success(chatMessage))
 		}
 	}
 	
@@ -43,11 +45,21 @@ protocol StatefulAction : Action {
 	var name: String { get }
 }
 
+struct ChatMessage {
+	var messageText: String
+	var isIncoming: Bool
+	
+	init(messageText: String, isIncoming: Bool) {
+		self.messageText = messageText
+		self.isIncoming = isIncoming
+	}
+}
+
 struct PostMessageToChatroomAction: Action, StatefulAction {
-	let actionState: ActionState<String>
+	let actionState: ActionState<ChatMessage>
 	let name = "PostMessageToChatroomAction"
 	
-	init(actionState: ActionState<String>) {
+	init(actionState: ActionState<ChatMessage>) {
 		self.actionState = actionState
 	}
 }
