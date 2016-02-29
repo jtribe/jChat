@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BeG-4R-d9r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BeG-4R-d9r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -18,19 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EPJ-UB-Tji">
-                                <rect key="frame" x="0.0" y="64" width="600" height="456"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EPJ-UB-Tji">
+                                <rect key="frame" x="0.0" y="64" width="600" height="471"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="pho-yf-iLZ" style="IBUITableViewCellStyleDefault" id="dqi-de-ytb">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="pho-yf-iLZ" style="IBUITableViewCellStyleDefault" id="dqi-de-ytb" customClass="ChatMessageTableViewCell" customModule="jChat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dqi-de-ytb" id="9QS-1k-3Hs">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pho-yf-iLZ">
-                                                    <rect key="frame" x="15" y="0.0" width="570" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="570" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -45,26 +45,33 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="ded-BO-d3y"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VLt-sr-KDw">
-                                <rect key="frame" x="20" y="540" width="560" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VLt-sr-KDw">
+                                <rect key="frame" x="10" y="545" width="580" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Z9i-b9-M1X"/>
+                                    <constraint firstAttribute="height" constant="45" id="3iB-j6-Yxc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes" returnKeyType="send"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="send" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="VLt-sr-KDw" firstAttribute="top" secondItem="EPJ-UB-Tji" secondAttribute="bottom" constant="20" id="3V4-a6-Zt4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VLt-sr-KDw" secondAttribute="trailing" constant="-10" id="9PO-We-DXf"/>
                             <constraint firstAttribute="trailing" secondItem="EPJ-UB-Tji" secondAttribute="trailing" id="Kuj-yg-w9h"/>
                             <constraint firstItem="EPJ-UB-Tji" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="StR-bd-WXt"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="VLt-sr-KDw" secondAttribute="bottom" constant="20" id="U2N-bF-LPG"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="VLt-sr-KDw" secondAttribute="bottom" constant="10" id="U2N-bF-LPG"/>
+                            <constraint firstItem="EPJ-UB-Tji" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="V8P-iY-nmg"/>
                             <constraint firstItem="EPJ-UB-Tji" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="WFo-KJ-5hb"/>
-                            <constraint firstItem="VLt-sr-KDw" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="elO-Iz-74p"/>
-                            <constraint firstItem="VLt-sr-KDw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="mz4-fh-OEY"/>
-                            <constraint firstItem="VLt-sr-KDw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="zCT-bW-S3V"/>
+                            <constraint firstAttribute="trailing" secondItem="VLt-sr-KDw" secondAttribute="trailing" constant="10" id="gZt-bM-SJe"/>
+                            <constraint firstItem="VLt-sr-KDw" firstAttribute="top" secondItem="EPJ-UB-Tji" secondAttribute="bottom" constant="10" id="uea-Nu-wbo"/>
+                            <constraint firstItem="VLt-sr-KDw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="x9e-zb-dfj"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="V8P-iY-nmg"/>
+                                <exclude reference="9PO-We-DXf"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="GzZ-pP-qUU">
                         <barButtonItem key="rightBarButtonItem" title="Actions" id="CO3-hv-5Vg">
@@ -103,7 +110,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BIJ-Z8-QFu" id="7my-1b-BPa">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IPe-Cn-sOS" userLabel="State">
