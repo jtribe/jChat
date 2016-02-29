@@ -22,16 +22,12 @@ class ChatMessageTableViewCell: UITableViewCell {
 			widthConstraint?.constant = UIScreen.mainScreen().bounds.size.width-Buffer.ScreenEdge.rawValue
 			chatLabel?.textAlignment = .Left
 			
-			//layoutIfNeeded()
-			
 			paint(isIncoming: true)
 		} else {
 			leadingConstraint?.priority = UILayoutPriorityDefaultLow
 			trailingConstraint?.priority = UILayoutPriorityDefaultHigh
 			widthConstraint?.constant = UIScreen.mainScreen().bounds.size.width-Buffer.ScreenEdge.rawValue
 			chatLabel?.textAlignment = .Right
-			
-			//layoutIfNeeded()
 			
 			paint(isIncoming: false)
 		}
